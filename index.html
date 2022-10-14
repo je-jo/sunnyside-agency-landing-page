@@ -5,71 +5,145 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/script.js" defer></script>
-    <title>Basic Template Site</title>
+    <title>Frontend Mentor | Sunnyside agency landing page</title>
 </head>
 
 <body>
     <header>
-        <h1>Basic Template Site</h1>
+        <div class="header__top">
+            <div class="logo--header"><img src="assets/images/logo.svg" alt=""></div>
+            <nav>
+                <button id="burger"><img src="assets/images/icon-hamburger.svg" alt=""></button>
+                <!-- <ul>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#projects">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul> -->
+            </nav>
+        </div>
+        <div class="header__hero">
+            <h1>We are creatives</h1>
+            <div class="hero__arrow"><img src="assets/images/icon-arrow-down.svg" alt=""></div>
+        </div>
     </header>
     <main>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
-        <h4>Heading 4</h4>
-        <p>This is a paragraph. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae incidunt perspiciatis,
-            ipsa
-            sit quis cum repellendus eos animi, minima, quisquam voluptatum excepturi similique sint eligendi? Vel ipsam
-            debitis quas nisi?</p>
-        <button class="btn">Button</button>
-        <button class="btn btn--alt">Alt Button</button>
-        <div class="card">
-            <h4>Card Title</h4>
-            <p>This is a paragraph inside card. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe maiores
-                ad
-                necessitatibus dignissimos incidunt inventore deserunt officiis voluptates ratione iste, aspernatur
-                dicta impedit mollitia molestiae ea autem perspiciatis asperiores ducimus!</p>
-        </div>
-        <div>
-            <h3>Responsive grid container</h3>
-            <div class="container--grid">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+        <section id="about">
+            <div class="card">
+                <div class="card__image">...egg</div>
+                <div class="card__content">
+                    <h3>Transform your brand</h3>
+                    <p>We are a full-service creative agency specializing in helping brands grow fast.
+                        Engage your clients through compelling visuals that do most of the marketing for you.</p>
+                    <a href="">Learn more</a>
+                </div>
             </div>
-        </div>
-        <div>
-            <h3>Responsive flex container</h3>
-            <div class="container--flex">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+            <div class="card">
+                <div class="card__image">...glass</div>
+                <div class="card__content">
+                    <h3>Stand out to the right audience</h3>
+                    <p>Using a collaborative formula of designers, researchers, photographers, videographers, and
+                        copywriters,
+                        we’ll
+                        build
+                        and extend your brand in digital places.</p>
+                    <a href="">Learn more</a>
+                </div>
             </div>
-        </div>
+        </section>
+        <section id="services">
+            <div class="card">
+                <div class="card__image">...cherries</div>
+                <div class="card__content">
+                    <h3>Graphic design</h3>
+                    <p>Great design makes you memorable. We deliver artwork that underscores your brand message and
+                        captures
+                        potential
+                        clients’ attention.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__image">...orange</div>
+                <div class="card__content">
+                    <h3>Photography</h3>
+                    <p>Increase your credibility by getting the most stunning, high-quality photos that improve your business
+                        image.</p>
+                </div>
+            </div> 
+        </section>
+        <section id="projects">
+            <h2>Client testimonials</h2>
+            <div class="container--card">
+                <div class="card">
+                    <div class="card__image"></div>
+                    <div class="card__content">
+                        <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always
+                            hit.</p>
+                        <p>Emily R.</p>
+                        <p>Marketing Director</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__image"></div>
+                    <div class="card__content">
+                        <p>Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and
+                            enjoyable
+                            experience.</p>
+                        <p>Thomas S.</p>
+                        <p>Chief Operating Officer</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__image"></div>
+                    <div class="card__content">
+                        <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
+                        <p>Jennie F.</p>
+                        <p>Business Owner</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container--images">...4 images</div>
 
     </main>
 
-    <footer>
-        <p>Coded by <a href="https://github.com/je-jo">Jelena Jovicic</a>, 2022.</p>
+    <footer id="contact">
+        <div class="logo--footer">...Sunnyside</div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#services">Services</a>
+                </li>
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container--icons">...social icons</div>
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend
+                Mentor</a>. Coded
+            by <a href="https://github.com/je-jo" target="_blank">Jelena Jovicic</a>, 2022.
+        </div>
     </footer>
 </body>
 
