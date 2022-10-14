@@ -20,27 +20,29 @@
     <header>
         <div class="header__top">
             <div class="logo--header"><img src="assets/images/logo.svg" alt=""></div>
-            <nav>
-                <button id="burger"><img src="assets/images/icon-hamburger.svg" alt=""></button>
-                <!-- <ul>
+            <nav id="mainnav" aria-label="Main">
+                <button id="btn-menu" type="button" aria-expanded="false" aria-label="Menu" aria-controls="mainnav">
+                    <img src="/assets/images/icon-hamburger.svg" alt="" aria-hidden="true">
+                </button>
+                <ul role="list" class="nav-list">
                     <li>
-                        <a href="#about">About</a>
+                        <a href="#about" class="nav-link">About</a>
                     </li>
                     <li>
-                        <a href="#services">Services</a>
+                        <a href="#services" class="nav-link">Services</a>
                     </li>
                     <li>
-                        <a href="#projects">Projects</a>
+                        <a href="#projects" class="nav-link">Projects</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a href="#contact" class="nav-link">Contact</a>
                     </li>
-                </ul> -->
+                </ul>
             </nav>
         </div>
         <div class="header__hero">
             <h1>We are creatives</h1>
-            <div class="hero__arrow"><img src="assets/images/icon-arrow-down.svg" alt=""></div>
+            <div class="hero__arrow"><img src="assets/images/icon-arrow-down.svg" alt="" aria-hidden="true"></div>
         </div>
     </header>
     <main>
