@@ -18,10 +18,7 @@ This is a solution to the [Sunnyside agency landing page challenge on Frontend M
 
 ### Description
 
-Users should be able to:
-
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
+Beautifully designed landing page featuring working responsive and accessible mobile menu. Made with Progressive Enhancement in mind, so the navigation is not hidden if the user blocks JavaScript. Helpful and informative articles linked below.
 
 ### Screenshot
 
@@ -51,6 +48,7 @@ Users should be able to:
 ### Useful resources
 
 - [My Basic Template](https://github.com/je-jo/basic-template) pretty much based on Stephanie Eckless' [HTML / Sass Jumpstart](https://github.com/5t3ph/html-sass-jumpstart) but much simpler;
+- [Clippy](https://bennettfeely.com/clippy/) - A tool to generate clip-paths easily.
 
 ## Author
 

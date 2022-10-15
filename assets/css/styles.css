@@ -56,9 +56,12 @@ select {
     /*primary colors*/
     --clr-soft-red: hsl(7, 99%, 70%);
     --clr-yellow: hsl(51, 100%, 49%);
-    --clr-dk-des-cyan: hsl(167, 40%, 24%); /*graphic design text*/
-    --clr-dk-blue: hsl(198, 62%, 26%); /*photography text*/
-    --clr-dk-moderate-cyan: hsl(168, 34%, 41%); /*footer*/
+    --clr-dk-des-cyan: hsl(167, 40%, 24%);
+    /*graphic design text*/
+    --clr-dk-blue: hsl(198, 62%, 26%);
+    /*photography text*/
+    --clr-dk-moderate-cyan: hsl(168, 34%, 41%);
+    /*footer*/
     /*neutral colors*/
     --clr-vdk-des-blue: hsl(212, 27%, 19%);
     --clr-vdk-grayish-blue: hsl(213, 9%, 39%);
@@ -77,7 +80,7 @@ select {
     --fs-h3: 2rem;
     --fs-h4: 1.35rem;
     --fs-text: 1.15rem;
-    --fs-lead: 1.35rem; 
+    --fs-lead: 1.35rem;
     --border-radius: 8px;
     --spacing-s: 1rem;
     --spacing-m: 3rem;
@@ -107,284 +110,302 @@ header {
     min-height: 70vh;
     place-self: center;
     padding-top: 78px;
-    background-image: url("../images/mobile/image-header.jpg");
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
     color: hsl(75 40% 98%);
-    background-color: hsl(200, 100%, 62%);
+    background:
+        url("../images/icon-arrow-down.svg") center 70% no-repeat,
+        url("../images/mobile/image-header.jpg") bottom center no-repeat hsl(200, 100%, 62%);
+    background-size: auto, cover;
 }
 
 @media screen and (min-width:45rem) {
     header {
-        background-image: url("../images/desktop/image-header.jpg");
-        background-size: contain;
+        background:
+            url("../images/icon-arrow-down.svg") center 70% no-repeat,
+            url("../images/desktop/image-header.jpg") bottom center no-repeat hsl(200, 100%, 62%);
+        background-size: auto, contain;
     }
 }
 
-.header__top {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 37px 27px;
-    background-color: hsl(200, 100%, 62%);
-}
+    .header__top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 1.5rem;
+        background-color: hsl(200, 100%, 62%);
+    }
 
-.header__hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
+    .header__hero {
+        display: grid;
+        place-items: center;
+        padding-top: 4.2rem;
+    }
 
 
-main {
-    width: min(100%, 90ch);
-    min-width: 0;
-    margin: 0 auto;
-    padding: 5vh clamp(1rem, 5vw, 3rem) 1rem;
-}
 
-/* main > * {
+
+    main {
+        width: min(100%, 90ch);
+        min-width: 0;
+        margin: 0 auto;
+        padding: 5vh clamp(1rem, 5vw, 3rem) 1rem;
+    }
+
+    /* main > * {
     margin-top: 1em;
 } */
 
-footer {
-    width: 100%;
-    margin-top: auto;
-    padding: 0.5em;
-    place-self: center;
-    text-align: center;
-    border-top: 1px solid currentColor;
-}
-
-/*utilities*/
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-.container--grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min-col-width)), 1fr));
-    padding: 1em;
-    gap: 1em;
-}
-
-.container--flex {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1em;
-    gap: 1em;
-}
-
-.container--flex > * {
-    flex: 1 1 var(--min-col-width);
-}
-
-
-
-/*typography */
-
-h2,
-h3,
-h4 {
-    font-weight: bold;
-    line-height: 1.15;
-    margin-bottom: 0.65em;
-}
-
-h1 {
-    font-size: var(--fs-h1);
-    font-size: min(max(3rem, 5vw), var(--fs-h1));
-    font-family: var(--ff-serif);
-    text-align: center;
-    max-width: 9ch;
-}
-
-h2 {
-    font-size: var(--fs-h2);
-    font-size: min(max(2.5rem, 4.5vw), var(--fs-h2));
-}
-
-h3 {
-    font-size: var(--fs-h3);
-}
-
-h4 {
-    font-size: var(--fs-h4);
-}
-
-p,
-li {
-    font-size: var(--fs-text);
-}
-
-main p {
-    margin: 0 0 1rem;
-    max-width: 80ch;
-}
-
-*+h2 {
-    margin-top: 4rem;
-}
-
-*+h3 {
-    margin-top: 2rem;
-}
-
-a:not(.btn) {
-    color: var(--clr-primary);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-a:not(.btn):hover {
-    color: var(--clr-primary-strong);
-    text-decoration: underline;
-    text-underline-offset: 0.2rem;
-}
-
-a.nav-link {
-    font-size: var(--fs-lead);
-    padding: 0.5em;
-    color: var(--clr-grayish-blue);
-}
-
-a.nav-link:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.5rem;
-    color: var(--clr-dk-blue);
-}
-
-/* navigation */
-/*if there is no javascript, .js class won't be added to nav and navigation will always be visible*/
-
-ul.nav-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    list-style: none;
-    transition: ease all 0.3s;
-    background-color: #fff;
-    clip-path: ellipse();
-}
-
-.js ul.nav-list {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 60vh;
-    width: 100%; 
-}
-
-ul.nav-list>li {
-    text-align: center;
-}
-
-.js [aria-expanded="false"]+ul.nav-list {
-    /*Hide the list that comes after the element (button) with aria-expanded set to "false"*/
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-100%);
-}
-
-button#btn-menu {
-    display: none;
-}
-
-.js button#btn-menu {
-    all: unset;
-    position: relative;
-    z-index: 1;
-}
-
-@media (min-width: 48rem) {
-
-    .js button#btn-menu {
-        display: none;
+    footer {
+        width: 100%;
+        margin-top: auto;
+        padding: 0.5em;
+        place-self: center;
+        text-align: center;
+        border-top: 1px solid currentColor;
     }
 
-    .js ul.nav-list {
-        position: unset;
-        flex-direction: row;
-        height: unset;
-        background-color: unset;
-        clip-path: unset;
+    /*utilities*/
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .container--grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min-col-width)), 1fr));
+        padding: 1em;
+        gap: 1em;
+    }
+
+    .container--flex {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1em;
+        gap: 1em;
+    }
+
+    .container--flex>* {
+        flex: 1 1 var(--min-col-width);
+    }
+
+
+
+    /*typography */
+
+    h2,
+    h3,
+    h4 {
+        font-weight: bold;
+        line-height: 1.15;
+        margin-bottom: 0.65em;
+    }
+
+    p.hero {
+        font-size: var(--fs-h1);
+        font-size: min(max(2.5rem, 4vw), var(--fs-h1));
+        font-family: var(--ff-serif);
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 1.3;
+        letter-spacing: 6.5px;
+    }
+
+    h2 {
+        font-size: var(--fs-h2);
+        font-size: min(max(2.5rem, 4.5vw), var(--fs-h2));
+    }
+
+    h3 {
+        font-size: var(--fs-h3);
+    }
+
+    h4 {
+        font-size: var(--fs-h4);
+    }
+
+    p,
+    li {
+        font-size: var(--fs-text);
+    }
+
+    main p {
+        margin: 0 0 1rem;
+        max-width: 80ch;
+    }
+
+    *+h2 {
+        margin-top: 4rem;
+    }
+
+    *+h3 {
+        margin-top: 2rem;
+    }
+
+    a {
+        color: var(--clr-primary);
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    a:hover {
+        color: var(--clr-primary-strong);
+        text-decoration: underline;
+        text-underline-offset: 0.2rem;
     }
 
     a.nav-link {
-        color: var(--clr-white);
+        font-size: var(--fs-text);
+        padding: 0.25em 1em;
+        color: var(--clr-dk-grayish-blue);
+    }
+
+    a.nav-link--cta {
+        font-size: var(--fs-lead);
+        font-size: 0.9em;
+        padding: 1em 1.8em;
+        font-family: var(--ff-serif);
+        font-weight: 900;
+        text-transform: uppercase;
+        color: var(--clr-vdk-des-blue);
+        background-color: var(--clr-yellow);
+        border-radius: 60px;
+    }
+
+    a.nav-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.5rem;
+        color: var(--clr-dk-blue);
+    }
+
+    /* navigation */
+    /*if there is no javascript, .js class won't be added to nav and navigation will always be visible*/
+
+    ul.nav-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        list-style: none;
+        transition: ease all 0.3s;
+        background-color: #fff;
+        clip-path: polygon(85% 23%, 7% 23%, 7% 89%, 93% 89%, 93% 18%);
+    }
+
+    .js ul.nav-list {
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding-top: 3rem;
+        height: 60vh;
+        width: 100%;
+    }
+
+    ul.nav-list>li {
+        text-align: center;
     }
 
     .js [aria-expanded="false"]+ul.nav-list {
-        /*revert hiding on wider viewports */
-        opacity: unset;
-        visibility: visible;
-        transform: unset;
+        /*Hide the list that comes after the element (button) with aria-expanded set to "false"*/
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100%);
     }
-}
 
-/*buttons*/
+    button#btn-menu {
+        display: none;
+    }
 
-.btn {
-    display: inline-flex;
-    align-items: center;
-    align-self: start;
-    justify-content: center;
-    min-width: 10ch;
-    min-height: 44px;
-    padding: 0.25em 1em;
-    transition: var(transition);
-    border: 2px solid currentColor;
-    border-radius: var(--border-radius);
-    background-color: var(--clr-primary);
-    color: var(--clr-white);
-    font-size: 1.125rem;
-    line-height: 1.1;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-}
+    .js button#btn-menu {
+        all: unset;
+        position: relative;
+        z-index: 1;
+    }
 
-.btn--alt {
-    background-color: var(--clr-white);
-    color: var(--clr-primary);
-}
+    @media (min-width: 48rem) {
 
-.btn:hover {
-    background-color: var(--clr-primary-strong)
-}
+        .js button#btn-menu {
+            display: none;
+        }
 
-.btn--alt:hover {
-    background-color: var(--clr-primary);
-    color: var(--clr-white);
-}
+        .js ul.nav-list {
+            position: unset;
+            flex-direction: row;
+            height: unset;
+            padding-top: unset;
+            background-color: unset;
+            clip-path: unset;
+        }
 
-/*card*/
+        a.nav-link {
+            color: var(--clr-white);
+        }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 2em;
-    gap: 2em;
-    border-radius: var(--border-radius);
-    background-color: #fff;
-    box-shadow: var(--box-shadow);
-}
+        .js [aria-expanded="false"]+ul.nav-list {
+            /*revert hiding on wider viewports */
+            opacity: unset;
+            visibility: visible;
+            transform: unset;
+        }
+    }
+
+    /*buttons*/
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        align-self: start;
+        justify-content: center;
+        min-width: 10ch;
+        min-height: 44px;
+        padding: 0.25em 1em;
+        transition: var(transition);
+        border: 2px solid currentColor;
+        border-radius: var(--border-radius);
+        background-color: var(--clr-primary);
+        color: var(--clr-white);
+        font-size: 1.125rem;
+        line-height: 1.1;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .btn--alt {
+        background-color: var(--clr-white);
+        color: var(--clr-primary);
+    }
+
+    .btn:hover {
+        background-color: var(--clr-primary-strong)
+    }
+
+    .btn--alt:hover {
+        background-color: var(--clr-primary);
+        color: var(--clr-white);
+    }
+
+    /*card*/
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 2em;
+        gap: 2em;
+        border-radius: var(--border-radius);
+        background-color: #fff;
+        box-shadow: var(--box-shadow);
+    }
