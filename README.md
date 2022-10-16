@@ -26,7 +26,7 @@ Beautifully designed landing page featuring working responsive and accessible mo
 
 ### Links
 
-- [Repo](...)
+- [Repo](https://github.com/je-jo/sunnyside-agency-landing-page)
 - [Live Site](...)
 
 ## My process
@@ -48,6 +48,8 @@ Beautifully designed landing page featuring working responsive and accessible mo
 ### Useful resources
 
 - [My Basic Template](https://github.com/je-jo/basic-template) pretty much based on Stephanie Eckless' [HTML / Sass Jumpstart](https://github.com/5t3ph/html-sass-jumpstart) but much simpler;
+- [Building the main navigation for a website](https://web.dev/website-navigation/) - A great article by Manuel Matuzovic.
+- [Accessible Mobile Navigation](https://www.a11ymatters.com/pattern/mobile-nav/)
 - [Clippy](https://bennettfeely.com/clippy/) - A tool to generate clip-paths easily.
 
 ## Author
