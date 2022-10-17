@@ -68,13 +68,8 @@ select {
     --clr-dk-grayish-blue: hsl(232, 10%, 55%);
     --clr-grayish-blue: hsl(210, 4%, 67%);
     --clr-white: hsl(0, 0%, 100%);
-    /*fonts*/
     --ff-serif: "Fraunces", serif;
     --ff-sans-serif: "Barlow", sans-serif;
-    /* --clr-dark: #222;
-    --clr-white: #f9f9f9;
-    --clr-primary: #EF6155;
-    --clr-primary-strong: #f13422; */
     --fs-h1: 4.2rem;
     --fs-h2: 3.15rem;
     --fs-h3: 2rem;
@@ -82,16 +77,30 @@ select {
     --fs-text: 1.15rem;
     --fs-lead: 1.35rem;
     --border-radius: 8px;
-    --spacing-s: 1rem;
-    --spacing-m: 3rem;
+    --spacing-s: 1.5rem;
+    --spacing-m: 2rem;
     --spacing-l: 6rem;
     --spacing-xl: 10rem;
     --transition: ease all .2s;
     --box-shadow: 0 3px 5px rgba(0, 0, 0, 0.28);
     --min-col-width: 15rem;
+    --logo-height: 1.5rem;
+    --header-height: calc(var(--logo-height) + ( 2 * var(--spacing-m)));
+}
+
+@media (min-width: 48rem) {
+    :root {
+        --spacing-s: 2.5rem;
+        --spacing-m: 3rem;
+        --logo-height: 2.1rem;
+    }
 }
 
 /*layout*/
+
+html {
+    scroll-padding-top: var(--header-height);
+}
 
 body {
     display: flex;
@@ -109,7 +118,7 @@ header {
     width: 100%;
     min-height: 70vh;
     place-self: center;
-    padding-top: 78px;
+    padding-top: var(--header-height);
     color: hsl(75 40% 98%);
     background:
         url("../images/icon-arrow-down.svg") center 70% no-repeat,
@@ -119,6 +128,7 @@ header {
 
 @media screen and (min-width:45rem) {
     header {
+        min-height: 80vh;
         background:
             url("../images/icon-arrow-down.svg") center 70% no-repeat,
             url("../images/desktop/image-header.jpg") bottom center no-repeat hsl(200, 100%, 62%);
@@ -135,32 +145,23 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 1.5rem;
+    padding: var(--spacing-m) var(--spacing-s);
     background-color: hsl(200, 100%, 62%);
 }
 
-@media screen and (min-width:45rem) {
-    .header__top {
-        padding: 4rem 3rem;
-    }
-
-    .header__top img {
-        transform: scale(1.4);
-        transform-origin: left;
-    }
+.header__logo {
+    height: var(--logo-height);
 }
 
 .header__hero {
     display: grid;
     place-items: center;
-    padding-top: 4.2rem;
+    padding-top: 3.2rem;
 }
 
 main {
-    width: min(100%, 90ch);
-    min-width: 0;
-    margin: 0 auto;
-    padding: 5vh clamp(1rem, 5vw, 3rem) 1rem;
+    width: 100%;
+    background-color: yellow;
 }
 
 footer {
@@ -198,6 +199,7 @@ footer {
     flex-wrap: wrap;
     padding: 1em;
     gap: 1em;
+    background-color: hotpink;
 }
 
 .container--flex>* {
@@ -225,6 +227,13 @@ p.hero {
     text-transform: uppercase;
     line-height: 1.3;
     letter-spacing: 6.5px;
+}
+
+@media (min-width: 48rem) {
+    p.hero {
+        line-height: unset;
+        letter-spacing: 10.5px;
+    }
 }
 
 h2 {
@@ -305,15 +314,16 @@ ul.nav-list {
     list-style: none;
     transition: ease all 0.3s;
     background-color: #fff;
-    
+
 }
 
-.btn--menu + ul.nav-list { /*settings for list that comes after button (meaning there is js) */
+.btn--menu+ul.nav-list {
+    /*settings for list that comes after button (meaning there is js) */
     position: fixed;
     top: 0;
     right: 0;
     height: 60vh;
-    padding-top: 3rem;
+    padding-top: 2rem;
     width: 100%;
     clip-path: polygon(85% 23%, 7% 23%, 7% 89%, 93% 89%, 93% 18%);
 }
@@ -333,6 +343,7 @@ ul.nav-list>li {
     all: unset;
     position: relative;
     z-index: 1;
+    cursor: pointer;
 }
 
 @media (min-width: 48rem) {
@@ -347,7 +358,7 @@ ul.nav-list>li {
         background-color: unset;
     }
 
-    .btn--menu + ul.nav-list {
+    .btn--menu+ul.nav-list {
         position: unset;
         height: unset;
         padding-top: unset;
@@ -356,6 +367,16 @@ ul.nav-list>li {
 
     a.nav-link {
         color: var(--clr-white);
+    }
+
+    a.nav-link--cta {
+        color: var(--clr-vdk-grayish-blue);
+        background-color: var(--clr-white);
+    }
+
+    a.nav-link--cta:hover {
+        color: var(--clr-white);
+        background-color: hsl(200, 100%, 72%);
     }
 
     [aria-expanded="false"]+ul.nav-list {
@@ -406,11 +427,22 @@ ul.nav-list>li {
 
 .card {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    width: 100%;
-    padding: 2em;
-    gap: 2em;
-    border-radius: var(--border-radius);
-    background-color: #fff;
-    box-shadow: var(--box-shadow);
+    background-color: bisque;
 }
+
+.card>* {
+    flex: 1 1 var(--min-col-width);
+}
+
+@media screen and (min-width:45rem) {
+    .card {
+        flex-direction: row;
+    }
+}
+
+.card__image {
+    background-color: yellowgreen;
+}
+

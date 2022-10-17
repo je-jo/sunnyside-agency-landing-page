@@ -19,11 +19,8 @@
 <body>
     <header>
         <div class="header__top">
-            <div class="logo--header"><a href="#"><img src="assets/images/logo.svg" alt=""></a><h1 class="sr-only">Sunnyside agency landing page</h1></div>
+            <a href="#"><img src="assets/images/logo.svg" alt="" class="header__logo"></a><h1 class="sr-only">Sunnyside agency landing page</h1>
             <nav id="mainnav" aria-label="Main">
-                <!-- <button id="btn-menu" type="button" aria-expanded="false" aria-label="Menu" aria-controls="mainnav">
-                    <img src="/assets/images/icon-hamburger.svg" alt="" aria-hidden="true">
-                </button> -->
                 <ul role="list" class="nav-list">
                     <li>
                         <a href="#about" class="nav-link">About</a>
@@ -46,6 +43,7 @@
     </header>
     <main>
         <section id="about">
+            <h2 class="sr-only">About</h2>
             <div class="card">
                 <div class="card__image">...egg</div>
                 <div class="card__content">
@@ -69,6 +67,7 @@
             </div>
         </section>
         <section id="services">
+            <h2>Services</h2>
             <div class="card">
                 <div class="card__image">...cherries</div>
                 <div class="card__content">
@@ -120,7 +119,9 @@
                 </div>
             </div>
         </section>
-        <div class="container--images">...4 images</div>
+        <section class="container--images">
+            <h2>Gallery</h2>
+            ...4 images</section>
 
     </main>
 
