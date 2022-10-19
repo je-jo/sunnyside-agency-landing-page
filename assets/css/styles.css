@@ -24,7 +24,7 @@ html {
 
 img {
     display: block;
-    max-width: 100%;
+    width: 100%;
 }
 
 input,
@@ -54,8 +54,9 @@ select {
 
 :root {
     /*primary colors*/
-    --clr-soft-red: hsl(7, 99%, 70%);
-    --clr-yellow: hsl(51, 100%, 49%);
+    --clr-segment-soft-red: 7, 99%, 70%;
+    --clr-segment-yellow: 51, 100%, 49%;
+    --opacity: 0.3;
     --clr-dk-des-cyan: hsl(167, 40%, 24%);
     /*graphic design text*/
     --clr-dk-blue: hsl(198, 62%, 26%);
@@ -80,10 +81,11 @@ select {
     --spacing-xs: 1rem;
     --spacing-s: 1.5rem;
     --spacing-m: 2rem;
-    --spacing-l: 6rem;
+    --spacing-l: 4rem;
     --spacing-xl: 10rem;
     --transition: ease all .2s;
     --box-shadow: 0 3px 5px rgba(0, 0, 0, 0.28);
+    --flex-basis: 100%;
     --min-col-width: 20rem;
     --logo-height: 1.5rem;
     --header-height: calc(var(--logo-height) + (2 * var(--spacing-m)));
@@ -299,7 +301,7 @@ a.nav-link--cta {
     font-weight: 900;
     text-transform: uppercase;
     color: var(--clr-vdk-des-blue);
-    background-color: var(--clr-yellow);
+    background-color: hsla(var(--clr-segment-yellow), 1);
     border-radius: 60px;
 }
 
@@ -309,28 +311,30 @@ a.nav-link:hover {
     color: var(--clr-dk-blue);
 }
 
-main a {
-    position: relative;
+a.card__link {
     font-family: var(--ff-serif);
     text-transform: uppercase;
+    letter-spacing: 0.8px;
     padding: var(--spacing-s);
     color: var(--clr-vdk-des-blue);
+    text-decoration: underline;
+    text-decoration-thickness: 10px;
+    text-underline-offset: -5px;
+    text-decoration-color: hsla(var(--clr-segment-yellow), var(--opacity));
+    text-decoration-skip-ink: none;
 }
 
-main a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    bottom: 30%;
-    width: 74%;
-    margin: 0 auto;
-    height: 10px;
-    background: var(--clr-yellow);
-    opacity: 0.4;
-    border-radius: var(--border-radius);
+a.card__link--red {
+    text-decoration-color: hsla(var(--clr-segment-soft-red), var(--opacity));
 }
+
+a.card__link:hover {
+    --opacity: 1;
+}
+
+
+
+
 
 /* navigation */
 /*if there is no javascript, there won't be a button and navigation will always be visible*/
@@ -482,12 +486,21 @@ ul.nav-list>li {
 }
 
 .container-for-two-items-flexible>* {
-    flex: 1 1 var(--min-col-width);
+    flex: 1 1 var(--flex-basis);
 }
 
 @media screen and (min-width:45rem) {
+    :root {
+        --flex-basis: var(--min-col-width);
+    }
+
     .container-for-two-items-flexible {
         flex-direction: row;
+        
+    }
+
+    .container-for-two-items-flexible>* {
+        max-height: 50vh;
     }
 
     .container-for-two-items-flexible:nth-of-type(1) {
@@ -498,5 +511,13 @@ ul.nav-list>li {
 .card__content {
     display: grid;
     place-items: center;
-    padding: var(--spacing-m) var(--spacing-xs);
+    padding: var(--spacing-l) var(--spacing-xs) var(--spacing-m);
+ 
+    
 }
+
+.card__image img {
+    object-fit: cover; 
+    height: 100%;
+    
+} 

@@ -19,7 +19,8 @@
 <body>
     <header>
         <div class="header__top">
-            <a href="#"><img src="assets/images/logo.svg" alt="" class="header__logo"></a><h1 class="sr-only">Sunnyside agency landing page</h1>
+            <a href="#"><img src="assets/images/logo.svg" alt="" class="header__logo"></a>
+            <h1 class="sr-only">Sunnyside agency landing page</h1>
             <nav id="mainnav" aria-label="Main">
                 <ul role="list" class="nav-list">
                     <li>
@@ -46,16 +47,27 @@
             <h2 class="sr-only">About</h2>
             <div class="container-for-two-items-flexible">
                 <div class="card__image">
-                    <img src="/assets/images/mobile/image-transform.jpg" alt="">
+                    <picture>
+                        <source srcset="assets/images/mobile/image-transform.jpg"
+                                media="(min-width: 45rem)">
+                        <img src="assets/images/desktop/image-transform.jpg" alt="">
+                    </picture>
                 </div>
                 <div class="card__content">
                     <h3>Transform your brand</h3>
-                    <p>We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.</p>
-                    <a href="">Learn more</a>
+                    <p>We are a full-service creative agency specializing in helping brands grow fast. Engage your
+                        clients through compelling visuals that do most of the marketing for you.</p>
+                    <a href="" class="card__link">Learn more</a>
                 </div>
             </div>
             <div class="container-for-two-items-flexible">
-                <div class="card__image">...glass</div>
+                <div class="card__image">
+                    <picture>
+                        <source srcset="assets/images/mobile/image-stand-out.jpg"
+                                media="(min-width: 45rem)">
+                        <img src="assets/images/desktop/image-stand-out.jpg" alt="">
+                    </picture>
+                </div>
                 <div class="card__content">
                     <h3>Stand out to the right audience</h3>
                     <p>Using a collaborative formula of designers, researchers, photographers, videographers, and
@@ -63,7 +75,7 @@
                         we’ll
                         build
                         and extend your brand in digital places.</p>
-                    <a href="">Learn more</a>
+                    <a href="" class="card__link card__link--red">Learn more</a>
                 </div>
             </div>
         </section>
@@ -83,10 +95,11 @@
                 <div class="card__image">...orange</div>
                 <div class="card__content">
                     <h3>Photography</h3>
-                    <p>Increase your credibility by getting the most stunning, high-quality photos that improve your business
+                    <p>Increase your credibility by getting the most stunning, high-quality photos that improve your
+                        business
                         image.</p>
                 </div>
-            </div> 
+            </div>
         </section>
         <section id="projects">
             <h2>Client testimonials</h2>
@@ -94,7 +107,8 @@
                 <div class="card">
                     <div class="card__image"></div>
                     <div class="card__content">
-                        <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always
+                        <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and
+                            deadlines were always
                             hit.</p>
                         <p>Emily R.</p>
                         <p>Marketing Director</p>
@@ -103,7 +117,8 @@
                 <div class="card">
                     <div class="card__image"></div>
                     <div class="card__content">
-                        <p>Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and
+                        <p>Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a
+                            satisfying and
                             enjoyable
                             experience.</p>
                         <p>Thomas S.</p>
@@ -113,7 +128,8 @@
                 <div class="card">
                     <div class="card__image"></div>
                     <div class="card__content">
-                        <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
+                        <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly
+                            recommended!</p>
                         <p>Jennie F.</p>
                         <p>Business Owner</p>
                     </div>
@@ -122,7 +138,8 @@
         </section>
         <section class="container--images">
             <h2>Gallery</h2>
-            ...4 images</section>
+            ...4 images
+        </section>
 
     </main>
 
