@@ -19,8 +19,8 @@
 <body>
     <header>
         <div class="header__top">
-            <a href="#"><img src="assets/images/logo.svg" alt="" class="header__logo"></a>
             <h1 class="sr-only">Sunnyside agency landing page</h1>
+            <a href="#"><img src="assets/images/logo.svg" alt="" aria-hidden="true" class="header__logo"></a>
             <nav id="mainnav" aria-label="Main">
                 <ul role="list" class="nav-list">
                     <li>
@@ -45,14 +45,11 @@
     <main>
         <section id="about">
             <h2 class="sr-only">About</h2>
-            <div class="container-for-two-items-flexible">
-                <div class="card__image">
-                    <picture>
-                        <source srcset="assets/images/mobile/image-transform.jpg"
-                                media="(min-width: 45rem)">
-                        <img src="assets/images/desktop/image-transform.jpg" alt="">
-                    </picture>
-                </div>
+            <div class="card container--two reverse">
+                <picture class="card__image">
+                    <source srcset="assets/images/mobile/image-transform.jpg" media="(min-width: 45rem)">
+                    <img src="assets/images/desktop/image-transform.jpg" alt="white egg on a bright yellow background">
+                </picture>
                 <div class="card__content">
                     <h3>Transform your brand</h3>
                     <p>We are a full-service creative agency specializing in helping brands grow fast. Engage your
@@ -60,14 +57,11 @@
                     <a href="" class="card__link">Learn more</a>
                 </div>
             </div>
-            <div class="container-for-two-items-flexible">
-                <div class="card__image">
-                    <picture>
-                        <source srcset="assets/images/mobile/image-stand-out.jpg"
-                                media="(min-width: 45rem)">
-                        <img src="assets/images/desktop/image-stand-out.jpg" alt="">
-                    </picture>
-                </div>
+            <div class="card container--two">
+                <picture class="card__image">
+                    <source srcset="assets/images/mobile/image-stand-out.jpg" media="(min-width: 45rem)">
+                    <img src="assets/images/desktop/image-stand-out.jpg" alt="tall pink glass on a pink background">
+                </picture>
                 <div class="card__content">
                     <h3>Stand out to the right audience</h3>
                     <p>Using a collaborative formula of designers, researchers, photographers, videographers, and
@@ -80,26 +74,37 @@
             </div>
         </section>
         <section id="services">
-            <h2>Services</h2>
-            <div class="card">
-                <div class="card__image">...cherries</div>
-                <div class="card__content">
-                    <h3>Graphic design</h3>
-                    <p>Great design makes you memorable. We deliver artwork that underscores your brand message and
-                        captures
-                        potential
-                        clients’ attention.</p>
+            <h2 class="sr-only">Services</h2>
+            <div class="container--two">
+
+                <div class="card grid-stack">
+                    <picture class="card__image">
+                        <source srcset="assets/images/desktop/image-graphic-design.jpg" media="(min-width: 45rem)">
+                        <img src="assets/images/mobile/image-graphic-design.jpg" alt="a couple of cherries on a light green background">
+                    </picture>
+                    <div class="card__content">
+                        <h3 class="textcolor1">Graphic design</h3>
+                        <p class="textcolor1">Great design makes you memorable. We deliver artwork that underscores your brand message and
+                            captures
+                            potential
+                            clients’ attention.</p>
+                    </div>
+                </div>
+                <div class="card grid-stack">
+                    <picture class="card__image">
+                        <source srcset="assets/images/desktop/image-photography.jpg" media="(min-width: 45rem)">
+                        <img src="assets/images/mobile/image-photography.jpg" alt="a tangerine on a light blue background">
+                    </picture>
+                    <div class="card__content">
+                        <h3 class="textcolor2">Photography</h3>
+                        <p class="textcolor2">Increase your credibility by getting the most stunning, high-quality photos that improve your
+                            business
+                            image.</p>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card__image">...orange</div>
-                <div class="card__content">
-                    <h3>Photography</h3>
-                    <p>Increase your credibility by getting the most stunning, high-quality photos that improve your
-                        business
-                        image.</p>
-                </div>
-            </div>
+
+
         </section>
         <section id="projects">
             <h2>Client testimonials</h2>
@@ -140,7 +145,6 @@
             <h2>Gallery</h2>
             ...4 images
         </section>
-
     </main>
 
     <footer id="contact">
