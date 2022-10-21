@@ -19,8 +19,7 @@
 <body>
     <header>
         <div class="header__top">
-            <h1 class="sr-only">Sunnyside agency landing page</h1>
-            <a href="#"><img src="assets/images/logo.svg" alt="" aria-hidden="true" class="header__logo"></a>
+            <a href="#"><img src="assets/images/logo.svg" alt="" aria-hidden="true" class="header__logo"><h1 class="sr-only">Sunnyside agency landing page</h1></a>
             <nav id="mainnav" aria-label="Main">
                 <ul role="list" class="nav-list">
                     <li>
@@ -45,7 +44,7 @@
     <main>
         <section id="about">
             <h2 class="sr-only">About</h2>
-            <div class="card container--two reverse">
+            <div class="card container container--reverse">
                 <picture class="card__image">
                     <source srcset="assets/images/mobile/image-transform.jpg" media="(min-width: 45rem)">
                     <img src="assets/images/desktop/image-transform.jpg" alt="white egg on a bright yellow background">
@@ -57,7 +56,7 @@
                     <a href="" class="card__link">Learn more</a>
                 </div>
             </div>
-            <div class="card container--two">
+            <div class="card container">
                 <picture class="card__image">
                     <source srcset="assets/images/mobile/image-stand-out.jpg" media="(min-width: 45rem)">
                     <img src="assets/images/desktop/image-stand-out.jpg" alt="tall pink glass on a pink background">
@@ -75,16 +74,18 @@
         </section>
         <section id="services">
             <h2 class="sr-only">Services</h2>
-            <div class="container--two">
+            <div class="container">
 
                 <div class="card grid-stack">
                     <picture class="card__image">
                         <source srcset="assets/images/desktop/image-graphic-design.jpg" media="(min-width: 45rem)">
-                        <img src="assets/images/mobile/image-graphic-design.jpg" alt="a couple of cherries on a light green background">
+                        <img src="assets/images/mobile/image-graphic-design.jpg"
+                            alt="a couple of cherries on a light green background">
                     </picture>
                     <div class="card__content">
                         <h3 class="textcolor1">Graphic design</h3>
-                        <p class="textcolor1">Great design makes you memorable. We deliver artwork that underscores your brand message and
+                        <p class="textcolor1">Great design makes you memorable. We deliver artwork that underscores your
+                            brand message and
                             captures
                             potential
                             clients’ attention.</p>
@@ -93,11 +94,13 @@
                 <div class="card grid-stack">
                     <picture class="card__image">
                         <source srcset="assets/images/desktop/image-photography.jpg" media="(min-width: 45rem)">
-                        <img src="assets/images/mobile/image-photography.jpg" alt="a tangerine on a light blue background">
+                        <img src="assets/images/mobile/image-photography.jpg"
+                            alt="a tangerine on a light blue background">
                     </picture>
                     <div class="card__content">
                         <h3 class="textcolor2">Photography</h3>
-                        <p class="textcolor2">Increase your credibility by getting the most stunning, high-quality photos that improve your
+                        <p class="textcolor2">Increase your credibility by getting the most stunning, high-quality
+                            photos that improve your
                             business
                             image.</p>
                     </div>
@@ -108,7 +111,7 @@
         </section>
         <section id="projects">
             <h2>Client testimonials</h2>
-            <div class="container--card">
+            <div class="container container--card">
                 <div class="card">
                     <div class="card__image"></div>
                     <div class="card__content">
@@ -142,8 +145,38 @@
             </div>
         </section>
         <section class="container--images">
-            <h2>Gallery</h2>
-            ...4 images
+            <h2 class="sr-only">Gallery</h2>
+            <div class="container">
+                <div class="container container--small">
+                    <picture class="card__image">
+                        <source srcset="assets/images/desktop/image-gallery-milkbottles.jpg" media="(min-width: 45rem)">
+                        <img src="assets/images/mobile/image-gallery-milkbottles.jpg"
+                            alt="a group of milkbottles on a blue background with clouds made of cotton">
+                    </picture>
+
+                    <picture class="card__image">
+                        <source srcset="assets/images/desktop/image-gallery-orange.jpg" media="(min-width: 45rem)">
+                        <img src="assets/images/mobile/image-gallery-orange.jpg"
+                            alt="an orange on white and green plates on orange background">
+                    </picture>
+                </div>
+
+
+
+                <div class="container container--small">
+                    <picture class="card__image">
+                        <source srcset="assets/images/desktop/image-gallery-cone.jpg" media="(min-width: 45rem)">
+                        <img src="assets/images/mobile/image-gallery-cone.jpg"
+                            alt="an empty ice cream cone on a blue background">
+                    </picture>
+                    <picture class="card__image">
+                        <source srcset="assets/images/desktop/image-gallery-sugarcubes.jpg" media="(min-width: 45rem)">
+                        <img src="assets/images/mobile/image-gallery-sugar-cubes.jpg"
+                            alt="a stack of sugar cubes on a pink background">
+                    </picture>
+                </div>
+            </div>
+
         </section>
     </main>
 

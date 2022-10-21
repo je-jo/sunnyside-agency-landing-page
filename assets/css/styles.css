@@ -59,7 +59,6 @@ select {
     --clr-dk-des-cyan: hsl(167, 40%, 24%);
     --clr-dk-blue: hsl(198, 62%, 26%);
     --clr-dk-moderate-cyan: hsl(168, 34%, 41%);
-    /*footer*/
     --clr-vdk-des-blue: hsl(212, 27%, 19%);
     --clr-vdk-grayish-blue: hsl(213, 9%, 39%);
     --clr-dk-grayish-blue: hsl(232, 10%, 55%);
@@ -82,8 +81,7 @@ select {
     --spacing-xl: 10rem;
     --transition: ease all .2s;
     --box-shadow: 0 3px 5px rgba(0, 0, 0, 0.28);
-    --flex-basis: 100%;
-    --min-col-width: 20rem;
+    --min-col-width: 100%;
     --logo-height: 1.5rem;
     --header-height: calc(var(--logo-height) + (2 * var(--spacing-m)));
 }
@@ -93,6 +91,7 @@ select {
         --spacing-s: 2.5rem;
         --spacing-m: 3rem;
         --logo-height: 2.1rem;
+        --min-col-width: 20rem;
     }
 }
 
@@ -168,6 +167,8 @@ footer {
     place-self: center;
     text-align: center;
     border-top: 1px solid currentColor;
+    background-color: var(--clr-dk-moderate-cyan);
+    color: #fff;
 }
 
 /*utilities*/
@@ -463,15 +464,22 @@ ul.nav-list>li {
 
 /* containers and cards */
 
-.container--two {
+.container {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-flow: column wrap;
     min-height: 100%;
 }
 
-.container--two>* {
-    flex: 1 1 var(--flex-basis);
+.container>* {
+    flex: 1 1 var(--min-col-width);
+}
+
+.container--small {
+    flex-flow: row nowrap;
+}
+
+.container--card {
+    flex-flow: column nowrap;
 }
 
 .card__content {
@@ -492,15 +500,12 @@ ul.nav-list>li {
 }
 
 @media screen and (min-width:45rem) {
-    :root {
-        --flex-basis: var(--min-col-width);
-    }
 
-    .container--two {
+    .container {
         flex-direction: row;
     }
 
-    .container--two.reverse {
+    .container--reverse {
         flex-direction: row-reverse;
     }
 
@@ -537,6 +542,8 @@ ul.nav-list>li {
     padding: 2.5rem 0.5rem;
     justify-items: center;
 }
+
+
 
 
 

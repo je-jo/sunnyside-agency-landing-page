@@ -51,6 +51,7 @@ Beautifully designed landing page featuring working responsive and accessible mo
 - [Building the main navigation for a website](https://web.dev/website-navigation/) - A great article by Manuel Matuzovic.
 - [Accessible Mobile Navigation](https://www.a11ymatters.com/pattern/mobile-nav/)
 - [Clippy](https://bennettfeely.com/clippy/) - A tool to generate clip-paths easily.
+- [PerfectPixel](https://www.welldonecode.com/perfectpixel/) a Chrome extension for comparing website with design image.
 
 ## Author
 
