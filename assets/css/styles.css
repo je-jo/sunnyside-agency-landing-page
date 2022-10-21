@@ -9,7 +9,7 @@
 * {
     margin: 0;
     padding: 0;
-    outline: 1px solid salmon; 
+    outline: 1px solid salmon;
 }
 
 :focus-visible {
@@ -115,7 +115,7 @@ body {
 
 header {
     width: 100%;
-    min-height: 70vh;
+    min-height: 33.5rem;
     place-self: center;
     padding-top: var(--header-height);
     color: hsl(75 40% 98%);
@@ -127,7 +127,7 @@ header {
 
 @media screen and (min-width:45rem) {
     header {
-        min-height: 80vh;
+        min-height: 50rem;
         background:
             url("../images/icon-arrow-down.svg") center center no-repeat,
             url("../images/desktop/image-header.jpg") bottom center no-repeat hsl(200, 100%, 62%);
@@ -146,6 +146,7 @@ header {
     justify-content: space-between;
     padding: var(--spacing-m) var(--spacing-s);
     background-color: hsl(200, 100%, 62%);
+    background: linear-gradient(180deg, hsl(200, 100%, 62%) 60%, hsla(200, 100%, 62%, 0.8));
 }
 
 .header__logo {
@@ -211,7 +212,7 @@ h3,
 h4 {
     font-weight: bold;
     line-height: 1.15;
-    margin-bottom: 0.85em;
+    /* margin-bottom: 0.85em; */
 }
 
 p.hero {
@@ -233,9 +234,16 @@ p.hero {
 }
 
 h2 {
-    font-size: var(--fs-h2);
-    /*3.15rem*/
+    /* font-size: var(--fs-h2);
+    /*3.15rem
     font-size: min(max(2.5rem, 4.5vw), var(--fs-h2));
+        font-size: min(max(2.5rem, 4.5vw), var(--fs-h2)); */
+    padding: 4rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--ff-serif);
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
 }
 
 h3 {
@@ -480,6 +488,10 @@ ul.nav-list>li {
 
 .container--card {
     flex-flow: column nowrap;
+    width: min(100%, 67rem);
+    margin: 0 auto;
+    gap: 4rem;
+    padding-bottom: 5rem;
 }
 
 .card__content {
@@ -525,11 +537,11 @@ ul.nav-list>li {
     align-items: end;
 }
 
-.grid-stack > * {
+.grid-stack>* {
     grid-area: stack;
 }
 
-.grid-stack > .card__image {
+.grid-stack>.card__image {
     align-self: stretch;
 }
 
@@ -538,12 +550,35 @@ ul.nav-list>li {
     max-height: 50rem;
 }
 
-.grid-stack > .card__content {
+.grid-stack>.card__content {
     padding: 2.5rem 0.5rem;
     justify-items: center;
 }
 
+.testimonial__image {
+    width: 75px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
 
+.testimonial__content {
+    padding: 2rem;
+    letter-spacing: -0.4px;
+}
 
+.testimonial__title {
+    font-family: var(--ff-serif);
+}
 
+.testimonial__subtitle {
+    font-size: 1rem;
+    letter-spacing: -1px;
+    line-height: 2;
+}
+
+.card * {
+    text-align: center;
+    margin: 0 auto;
+}
 
