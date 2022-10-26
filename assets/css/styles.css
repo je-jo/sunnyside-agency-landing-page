@@ -494,18 +494,18 @@ ul.nav-list>li {
     padding-bottom: 5rem;
 }
 
-.card__content {
+.content__text {
     display: grid;
     place-content: center;
     gap: 0.5rem;
     padding: var(--spacing-l) var(--spacing-xs);
 }
 
-.card__content>* {
+.content__text>* {
     text-align: center;
 }
 
-.card__image img {
+.content__image img {
     height: 100%;
     object-fit: cover;
     max-height: 38rem;
@@ -521,11 +521,11 @@ ul.nav-list>li {
         flex-direction: row-reverse;
     }
 
-    .card__content {
+    .content__text {
         gap: 1rem;
     }
 
-    .card__content>* {
+    .content__text>* {
         text-align: left;
     }
 }
@@ -541,7 +541,7 @@ ul.nav-list>li {
     grid-area: stack;
 }
 
-.grid-stack>.card__image {
+.grid-stack>.content__image {
     align-self: stretch;
 }
 
@@ -550,7 +550,7 @@ ul.nav-list>li {
     max-height: 50rem;
 }
 
-.grid-stack>.card__content {
+.grid-stack>.content__text {
     padding: 2.5rem 0.5rem;
     justify-items: center;
 }
