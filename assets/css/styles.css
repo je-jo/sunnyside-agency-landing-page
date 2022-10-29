@@ -1,3 +1,16 @@
+/*
+01 reset
+02 theme
+03 page layout
+04 utilities
+05 main wrappers
+06 typography
+07 navigation
+08 links
+09 content...
+10 cards
+*/
+
 /*reset*/
 
 *,
@@ -9,7 +22,7 @@
 * {
     margin: 0;
     padding: 0;
-    outline: 1px solid salmon;
+    /* outline: 1px solid salmon; */
 }
 
 :focus-visible {
@@ -70,7 +83,6 @@ select {
     --fs-heading-l: 2.5rem;
     --fs-h2: 3.15rem;
     --fs-h3: 2rem;
-    --fs-h4: 1.35rem;
     --fs-text: 1.15rem;
     --fs-lead: 1.35rem;
     --border-radius: 8px;
@@ -95,7 +107,7 @@ select {
     }
 }
 
-/*layout*/
+/*page layout*/
 
 html {
     scroll-padding-top: var(--header-height);
@@ -109,7 +121,7 @@ body {
     font-size: 100%;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
-    background-color: hsl(26deg 100% 99%);
+    background-color: hsl(24, 100%, 99%);
     color: var(--clr-dk-grayish-blue);
 }
 
@@ -118,7 +130,7 @@ header {
     min-height: 33.5rem;
     place-self: center;
     padding-top: var(--header-height);
-    color: hsl(75 40% 98%);
+    color: hsl(75, 40%, 98%);
     background:
         url("../images/icon-arrow-down.svg") center 70% no-repeat,
         url("../images/mobile/image-header.jpg") bottom center no-repeat hsl(200, 100%, 62%);
@@ -186,51 +198,47 @@ footer {
     border: 0;
 }
 
-/* .container--grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min-col-width)), 1fr));
-    padding: 1em;
-    gap: 1em;
-}
+/*main wrappers*/
 
-.container--flex {
+.wrapper {
     display: flex;
-    flex-wrap: wrap;
-    padding: 1em;
-    gap: 1em;
-    background-color: hotpink;
+    flex-flow: column wrap;
+    min-height: 100%;
 }
 
-.container--flex>* {
+.wrapper>* {
     flex: 1 1 var(--min-col-width);
-} */
+}
+
+.wrapper--small {
+    flex-flow: row nowrap;
+}
+
+.wrapper--cards {
+    flex-wrap: nowrap;
+    width: min(100%, 70rem);
+    margin: 0 auto;
+    /* gap: 4rem; */
+    padding-bottom: 5rem;
+}
+
+@media screen and (min-width:45rem) {
+    .wrapper {
+        flex-direction: row;
+    }
+
+    .wrapper--reverse {
+        flex-direction: row-reverse;
+    }
+}
 
 /*typography */
 
 h2,
-h3,
-h4 {
+h3 {
     font-weight: bold;
     line-height: 1.15;
     /* margin-bottom: 0.85em; */
-}
-
-p.hero {
-    font-size: var(--fs-heading-xl);
-    font-size: min(max(2.5rem, 4vw), var(--fs-heading-xl));
-    font-family: var(--ff-serif);
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    line-height: 1.3;
-    letter-spacing: 6.5px;
-}
-
-@media (min-width: 48rem) {
-    p.hero {
-        line-height: unset;
-        letter-spacing: 10.5px;
-    }
 }
 
 h2 {
@@ -255,10 +263,6 @@ h3 {
     color: var(--clr-vdk-des-blue);
 }
 
-h4 {
-    font-size: var(--fs-h4);
-}
-
 p,
 li {
     font-size: var(--fs-text);
@@ -268,6 +272,24 @@ main p {
     margin: 0 0 1rem;
     max-width: 44ch;
     line-height: 1.6;
+}
+
+p.hero {
+    font-size: var(--fs-heading-xl);
+    font-size: min(max(2.5rem, 4vw), var(--fs-heading-xl));
+    font-family: var(--ff-serif);
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.3;
+    letter-spacing: 6.5px;
+}
+
+@media (min-width: 48rem) {
+    p.hero {
+        line-height: unset;
+        letter-spacing: 10.5px;
+    }
 }
 
 .grid-stack p {
@@ -288,6 +310,77 @@ main p {
 .textcolor2 {
     color: var(--clr-dk-blue);
 }
+
+/* navigation */
+/*if there is no javascript, there won't be a button and navigation will always be visible*/
+
+ul.nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    transition: ease all 0.3s;
+    background-color: #fff;
+}
+
+ul.nav-list>li {
+    text-align: center;
+}
+
+.btn--menu+ul.nav-list {
+    /*settings for list that comes after button (if there's a button, there is js) */
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 60vh;
+    padding-top: 2rem;
+    width: 100%;
+    clip-path: polygon(85% 23%, 7% 23%, 7% 89%, 93% 89%, 93% 18%);
+}
+
+[aria-expanded="false"]+ul.nav-list {
+    /*Hide the list that comes after the element (button) with aria-expanded set to "false"*/
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+}
+
+.btn--menu {
+    all: unset;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+@media (min-width: 48rem) {
+
+    .btn--menu {
+        display: none;
+    }
+
+    ul.nav-list {
+        flex-direction: row;
+        gap: 1rem;
+        background-color: unset;
+    }
+
+    .btn--menu+ul.nav-list {
+        position: unset;
+        height: unset;
+        padding-top: unset;
+        clip-path: unset;
+    }
+
+    [aria-expanded="false"]+ul.nav-list {
+        /*revert hiding on wider viewports */
+        opacity: unset;
+        visibility: visible;
+        transform: unset;
+    }
+}
+
+/* links */
 
 a {
     color: var(--clr-primary);
@@ -342,7 +435,6 @@ a.nav-link:hover {
 }
 
 a.content__link {
-    display: block;
     font-family: var(--ff-serif);
     text-transform: uppercase;
     letter-spacing: 0.8px;
@@ -362,137 +454,7 @@ a.content__link:hover {
     --opacity: 1;
 }
 
-/* navigation */
-/*if there is no javascript, there won't be a button and navigation will always be visible*/
-
-ul.nav-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
-    list-style: none;
-    transition: ease all 0.3s;
-    background-color: #fff;
-}
-
-ul.nav-list>li {
-    text-align: center;
-}
-
-.btn--menu+ul.nav-list {
-    /*settings for list that comes after button (if there's a button, there is js) */
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 60vh;
-    padding-top: 2rem;
-    width: 100%;
-    clip-path: polygon(85% 23%, 7% 23%, 7% 89%, 93% 89%, 93% 18%);
-}
-
-
-
-[aria-expanded="false"]+ul.nav-list {
-    /*Hide the list that comes after the element (button) with aria-expanded set to "false"*/
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-100%);
-}
-
-.btn--menu {
-    all: unset;
-    position: relative;
-    z-index: 1;
-    cursor: pointer;
-}
-
-@media (min-width: 48rem) {
-
-    .btn--menu {
-        display: none;
-    }
-
-    ul.nav-list {
-        flex-direction: row;
-        gap: 1rem;
-        background-color: unset;
-    }
-
-    .btn--menu+ul.nav-list {
-        position: unset;
-        height: unset;
-        padding-top: unset;
-        clip-path: unset;
-    }
-
-    [aria-expanded="false"]+ul.nav-list {
-        /*revert hiding on wider viewports */
-        opacity: unset;
-        visibility: visible;
-        transform: unset;
-    }
-}
-
-/*buttons*/
-
-/* .btn {
-    display: inline-flex;
-    align-items: center;
-    align-self: start;
-    justify-content: center;
-    min-width: 10ch;
-    min-height: 44px;
-    padding: 0.25em 1em;
-    transition: var(transition);
-    border: 2px solid currentColor;
-    border-radius: var(--border-radius);
-    background-color: var(--clr-primary);
-    color: var(--clr-white);
-    font-size: 1.125rem;
-    line-height: 1.1;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.btn--alt {
-    background-color: var(--clr-white);
-    color: var(--clr-primary);
-}
-
-.btn:hover {
-    background-color: var(--clr-primary-strong)
-}
-
-.btn--alt:hover {
-    background-color: var(--clr-primary);
-    color: var(--clr-white);
-} */
-
-
-/* containers and cards */
-
-.container {
-    display: flex;
-    flex-flow: column wrap;
-    min-height: 100%;
-}
-
-.container>* {
-    flex: 1 1 var(--min-col-width);
-}
-
-.container--small {
-    flex-flow: row nowrap;
-}
-
-.container--card {
-    flex-flow: column nowrap;
-    width: min(100%, 70rem);
-    margin: 0 auto;
-    /* gap: 4rem; */
-    padding-bottom: 5rem;
-}
+/* content and grid stack */
 
 .content__text {
     display: grid;
@@ -512,15 +474,6 @@ ul.nav-list>li {
 }
 
 @media screen and (min-width:45rem) {
-
-    .container {
-        flex-direction: row;
-    }
-
-    .container--reverse {
-        flex-direction: row-reverse;
-    }
-
     .content__text {
         gap: 1rem;
     }
@@ -528,6 +481,7 @@ ul.nav-list>li {
     .content__text>* {
         text-align: left;
     }
+
 }
 
 .grid-stack {
@@ -555,29 +509,7 @@ ul.nav-list>li {
     justify-items: center;
 }
 
-.testimonial__image {
-    width: 75px;
-    margin: 0 auto;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.testimonial__content {
-    flex-grow: 1;
-    padding: 2rem;
-    text-align: center;
-    letter-spacing: -0.4px;
-}
-
-.testimonial__title {
-    font-family: var(--ff-serif);
-}
-
-.testimonial__subtitle {
-    font-size: 1rem;
-    letter-spacing: -1px;
-    line-height: 2;
-}
+/* cards */
 
 .card {
     background-color: yellow;
@@ -586,9 +518,31 @@ ul.nav-list>li {
     align-items: center;
 }
 
+.card__image {
+    width: 75px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
 
-
-/* .card * {
+.card__content {
+    flex-grow: 1;
+    padding: 2rem;
     text-align: center;
-}  */
+    letter-spacing: -0.4px;
+}
+
+.card__title {
+    font-family: var(--ff-serif);
+}
+
+.card__subtitle {
+    font-size: 1rem;
+    letter-spacing: -1px;
+    line-height: 2;
+}
+
+p {
+    background-color: hotpink;
+}
 
