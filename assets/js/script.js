@@ -11,8 +11,10 @@ menuBtn.classList.add("btn--menu")
 menuBtn.setAttribute("aria-expanded", "false");
 menuBtn.setAttribute("aria-label", "Menu");
 menuBtn.setAttribute("aria-controls", "mainnav");
-menuIcon.setAttribute("src", "/assets/images/icon-hamburger.svg")
-menuIcon.setAttribute("alt", "");
+menuIcon.setAttribute("src", "/assets/images/icon-hamburger.svg");
+menuIcon.setAttribute("width", "24px");
+menuIcon.setAttribute("height", "auto");
+menuIcon.setAttribute("alt", " ");
 menuIcon.setAttribute("aria-hidden", "true");
 menuBtn.appendChild(menuIcon);
 nav.insertBefore(menuBtn, list)
@@ -20,6 +22,7 @@ nav.insertBefore(menuBtn, list)
 
 menuBtn.addEventListener("click", () => {
     const isClosed = menuBtn.getAttribute("aria-expanded") === "false"; //returns boolean
+    isClosed ? menuIcon.setAttribute("src", "/assets/images/icon-close.svg") : menuIcon.setAttribute("src", "/assets/images/icon-hamburger.svg");
     menuBtn.setAttribute("aria-expanded", isClosed); //if isClosed is true, menu will expand and vice versa
 })
 
@@ -39,6 +42,3 @@ navLinks.forEach(link => {
     })
 })
 
-/* <button id="btn-menu" type="button" aria-expanded="false" aria-label="Menu" aria-controls="mainnav">
-<img src="/assets/images/icon-hamburger.svg" alt="" aria-hidden="true">
-</button> */
