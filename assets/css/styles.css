@@ -38,6 +38,7 @@ html {
 img {
     display: block;
     width: 100%;
+    height: auto;
 }
 
 input,
@@ -179,7 +180,6 @@ footer {
     padding: 0.5em;
     place-self: center;
     text-align: center;
-    border-top: 1px solid currentColor;
     background-color: var(--clr-dk-moderate-cyan);
     color: #fff;
 }
@@ -351,6 +351,10 @@ p.card__content {
 
 /* navigation */
 /*if there is no javascript, there won't be a button and navigation will always be visible*/
+
+nav {
+    line-height: 1;
+}
 
 ul.nav-list {
     display: flex;
@@ -557,6 +561,11 @@ a.content__link:hover {
     flex-grow: 1;
     padding: 2rem;
 
+}
+
+.btn--menu img {
+    width: 30px;
+    height: 30px;
 }
 
 
