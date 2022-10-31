@@ -12,8 +12,6 @@ menuBtn.setAttribute("aria-expanded", "false");
 menuBtn.setAttribute("aria-label", "Menu");
 menuBtn.setAttribute("aria-controls", "mainnav");
 menuIcon.setAttribute("src", "/assets/images/icon-hamburger.svg");
-menuIcon.setAttribute("width", "24px");
-menuIcon.setAttribute("height", "auto");
 menuIcon.setAttribute("alt", " ");
 menuIcon.setAttribute("aria-hidden", "true");
 menuBtn.appendChild(menuIcon);
@@ -29,6 +27,7 @@ menuBtn.addEventListener("click", () => {
 nav.addEventListener("keyup", (e) => { //hide nav on escape
     if (e.code === "Escape") {
         menuBtn.setAttribute("aria-expanded", false);
+        
     }
 })
 
@@ -39,6 +38,7 @@ const navLinks = [...nav.querySelectorAll("a")];
 navLinks.forEach(link => {
     link.addEventListener("click", e => {
         menuBtn.setAttribute("aria-expanded", false); 
+        menuIcon.setAttribute("src", "/assets/images/icon-hamburger.svg");
     })
 })
 
