@@ -11,7 +11,7 @@ menuBtn.classList.add("btn--menu")
 menuBtn.setAttribute("aria-expanded", "false");
 menuBtn.setAttribute("aria-label", "Menu");
 menuBtn.setAttribute("aria-controls", "mainnav");
-menuIcon.setAttribute("src", "/assets/images/icon-hamburger.svg");
+menuIcon.setAttribute("src", "assets/images/icon-hamburger.svg");
 // menuIcon.setAttribute("width", "24px");
 // menuIcon.setAttribute("height", "24px");
 menuIcon.setAttribute("alt", " ");
@@ -22,7 +22,7 @@ nav.insertBefore(menuBtn, list)
 
 menuBtn.addEventListener("click", () => {
     const isClosed = menuBtn.getAttribute("aria-expanded") === "false"; //returns boolean
-    isClosed ? menuIcon.setAttribute("src", "/assets/images/icon-close.svg") : menuIcon.setAttribute("src", "/assets/images/icon-hamburger.svg");
+    isClosed ? menuIcon.setAttribute("src", "assets/images/icon-close.svg") : menuIcon.setAttribute("src", "assets/images/icon-hamburger.svg");
     menuBtn.setAttribute("aria-expanded", isClosed); //if isClosed is true, menu will expand and vice versa
 })
 
@@ -40,7 +40,7 @@ const navLinks = [...nav.querySelectorAll("a")];
 navLinks.forEach(link => {
     link.addEventListener("click", () => {
         menuBtn.setAttribute("aria-expanded", false); 
-        menuIcon.setAttribute("src", "/assets/images/icon-hamburger.svg");
+        menuIcon.setAttribute("src", "assets/images/icon-hamburger.svg");
     })
 })
 

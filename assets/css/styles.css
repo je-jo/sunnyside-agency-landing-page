@@ -9,6 +9,7 @@
 08 links
 09 main content elements
 10 cards
+11 footer
 */
 
 /*reset*/
@@ -92,7 +93,7 @@ select {
     --spacing-m: 2rem;
     --spacing-l: 4rem;
     --spacing-xl: 10rem;
-    --transition: ease all .2s;
+    --transition: ease all 0.2s;
     --box-shadow: 0 3px 5px rgba(0, 0, 0, 0.28);
     --min-col-width: 100%;
     --logo-height: 1.5rem;
@@ -120,7 +121,7 @@ body {
     min-height: 100vh;
     font-family: var(--ff-sans-serif);
     font-size: 100%;
-    line-height: 1.5;
+    /* line-height: 1.5; */
     text-rendering: optimizeSpeed;
     background-color: hsl(24, 100%, 99%);
     color: var(--clr-dk-grayish-blue);
@@ -176,16 +177,16 @@ main {
 
 footer {
     width: 100%;
-    margin-top: auto;
-    padding-bottom: 0.5em;
+    padding: 4rem 0 0.5rem; 
     place-self: center;
     text-align: center;
     color: var(--clr-dk-moderate-cyan);
-    background-color: hsl(168deg 34% 70%);
-
+    background-color: hsl(168, 35%, 70%);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
 }
 
 /*utilities*/
@@ -399,6 +400,11 @@ ul.nav-list>li {
     cursor: pointer;
 }
 
+.btn--menu img {
+    width: 30px;
+    height: 30px;
+}
+
 @media screen and (min-width: 48rem) {
 
     .btn--menu {
@@ -500,6 +506,10 @@ a.content__link:hover {
     --opacity: 1;
 }
 
+.nav-list--bottom a:hover {
+    color: var(--clr-white);
+}
+
 /* main content elements */
 
 .content__text {
@@ -567,38 +577,35 @@ a.content__link:hover {
 
 }
 
-/*---------*/
-
-.btn--menu img {
-    width: 30px;
-    height: 30px;
-}
-
-#bottomnav {
-    width: 100%;
-}
+/* footer */
 
 .nav-list--bottom {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 0.5rem;
+    gap: 3rem;
     list-style: none;
 }
 
-.footer__logo {
-    padding: 4rem 6rem 2rem;
+img.footer__logo {
+    width: 10rem;
 }
 
 .wrapper--social {
-    padding: 6rem;
+    padding: 3rem 0;
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 1.5rem;
 }
 
-.wrapper--social img {
+.wrapper--social svg {
     width: 20px;
+}
+
+.wrapper--social svg:hover>path {
+fill: var(--clr-white);
 }
 
 
