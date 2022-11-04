@@ -15,6 +15,7 @@ menuBtn.setAttribute("aria-controls", "mainnav");
 menuIcon.setAttribute("src", "assets/images/icon-hamburger.svg");
 menuIcon.setAttribute("alt", " ");
 menuIcon.setAttribute("aria-hidden", "true");
+menuIcon.setAttribute("width", "30px");
 menuBtn.appendChild(menuIcon);
 nav.insertBefore(menuBtn, list)
 
