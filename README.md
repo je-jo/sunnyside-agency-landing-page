@@ -22,7 +22,9 @@ Beautifully designed landing page featuring working responsive and accessible mo
 
 ### Screenshot
 
-| ![](screenshot.png) |
+<p align="center">
+  <img width="360" src="https://raw.githubusercontent.com/je-jo/sunnyside-agency-landing-page/main/screenshot.png">
+</p>
 
 ### Links
 
