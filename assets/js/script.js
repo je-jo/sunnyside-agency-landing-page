@@ -1,8 +1,9 @@
 const nav = document.querySelector("#mainnav");
-//nav.classList.add("js"); //if javascript is disabled, navigation will always be visible
+const list = nav.querySelector(".nav-list");
+list.classList.add("nav-list--mobile");
+const root = document.documentElement;
+root.style.setProperty("--nav-height", "30px");
 
-const list = nav.querySelector("ul");
-//const menuBtn = nav.querySelector("button");
 const menuBtn = document.createElement("button");
 const menuIcon = document.createElement("img");
 
@@ -12,13 +13,10 @@ menuBtn.setAttribute("aria-expanded", "false");
 menuBtn.setAttribute("aria-label", "Menu");
 menuBtn.setAttribute("aria-controls", "mainnav");
 menuIcon.setAttribute("src", "assets/images/icon-hamburger.svg");
-// menuIcon.setAttribute("width", "24px");
-// menuIcon.setAttribute("height", "24px");
 menuIcon.setAttribute("alt", " ");
 menuIcon.setAttribute("aria-hidden", "true");
 menuBtn.appendChild(menuIcon);
 nav.insertBefore(menuBtn, list)
-
 
 menuBtn.addEventListener("click", () => {
     const isClosed = menuBtn.getAttribute("aria-expanded") === "false"; //returns boolean
@@ -28,8 +26,7 @@ menuBtn.addEventListener("click", () => {
 
 nav.addEventListener("keyup", (e) => { //hide nav on escape
     if (e.code === "Escape") {
-        menuBtn.setAttribute("aria-expanded", false);
-        
+        menuBtn.setAttribute("aria-expanded", false); 
     }
 })
 
@@ -42,5 +39,5 @@ navLinks.forEach(link => {
         menuBtn.setAttribute("aria-expanded", false); 
         menuIcon.setAttribute("src", "assets/images/icon-hamburger.svg");
     })
-})
+});
 

@@ -27,7 +27,7 @@ Beautifully designed landing page featuring working responsive and accessible mo
 ### Links
 
 - [Repo](https://github.com/je-jo/sunnyside-agency-landing-page)
-- [Live Site](...)
+- [Live Site](https://je-jo.github.io/sunnyside-agency-landing-page/)
 
 ## My process
 
@@ -39,11 +39,11 @@ Beautifully designed landing page featuring working responsive and accessible mo
 - Flexbox
 - Mobile-first workflow
 - JavaScript
+- Progressive Enhancement
 
 ### Observations
 
-- use min-height for flex-item if vertical overflow
-
+- I've had issues with vertical overflow with flexbox. Solution is to use min-height instead of height on flex items.
 
 ### Useful resources
 
