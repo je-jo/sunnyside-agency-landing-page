@@ -22,7 +22,7 @@ Beautifully designed landing page featuring working responsive and accessible mo
 
 ### Screenshot
 
-![](screenshot.png)
+| ![](screenshot.png) |
 
 ### Links
 
